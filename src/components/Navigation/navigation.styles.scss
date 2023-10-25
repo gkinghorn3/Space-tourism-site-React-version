@@ -1,6 +1,35 @@
 .nav-container {
-    background-color: hsl(var(--clr-white));
+    background-color: transparent;
     width: 100vw;
     height: fit-content;
-    margin-top: 1.4rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-left: 2rem;
+    
+    
+
+    .heading-left {
+        flex-basis: 35%;
+
+        img {
+            margin-top: 2.4rem;
+        }
+    }
+
+    .nav-links {
+        flex-basis: 65%;
+        justify-content: end;
+       
+        padding-right: clamp(2rem, -10.8428rem + 26.7559vw, 12rem);
+        background-color: hsl( var(--clr-white) / 0.04); 
+        backdrop-filter: blur(20.774227142333984px);
+
+        li {
+            height: 100%;
+            padding: 2rem 0;
+        }
+        
+        
+    }
+    
 }
