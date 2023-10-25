@@ -166,7 +166,8 @@ a {
 
 .flex {
   display: flex;
-  flex-direction: var(--flex-dir, row);
+
+  
   gap: var(--gap, 1rem);
 
 }
@@ -264,10 +265,11 @@ a {
   display: grid;
   z-index: 1;
   place-items: center;
+  
   aspect-ratio: 1;
   text-decoration: none;
   border-radius: 50%;
-  padding: 0 2em;
+  // padding: 0 1em;
  }
 
  .large-btn::after {
@@ -285,7 +287,9 @@ a {
  .large-btn:focus::after {
     opacity: 1;
     transform: scale(1.4);
- }.large-btn::after {
+ }
+ 
+ .large-btn::after {
   content: "";
   position: absolute;
   z-index: -1;

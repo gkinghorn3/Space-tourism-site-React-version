@@ -32,14 +32,13 @@ const Navigation = ({ tabSelector }) => {
         <ul className="nav-links flex underline-indicators">
           <Link to="/">
             <li
-                aria-selected={checkedIndex === 0}
-                onClick={() => handleItemClick(0, "home")}
-                className="numbered-title"
+              aria-selected={checkedIndex === 0}
+              onClick={() => handleItemClick(0, "home")}
+              className="numbered-title"
             >
-                <span>00</span>home
+              <span>00</span>home
             </li>
-            
-            </Link>  
+          </Link>
 
           <Link to="/destinations">
             <li
@@ -69,11 +68,24 @@ const Navigation = ({ tabSelector }) => {
       </nav>
       {homeVisible && (
         <section className="home-content-container">
-           <div className='home-heading-txt'> 
-           <h1 className="uppercase -fs-400">So you want to travel to</h1>
-           <span className='fs-900 uppercase ff-serif'>Space</span>
-           </div>
-          
+          <div className=" flex home-heading-content ">
+            <div>
+              <h1 className="uppercase ">So you want to travel to</h1>
+              <span className="fs-900 uppercase ff-serif">Space</span>
+              <p>
+                Let’s face it; if you want to go to space, you might as well
+                genuinely go to outer space and not hover kind of on the edge of
+                it. Well sit back, and relax because we’ll give you a truly out
+                of this world experience!
+              </p>
+            </div>
+
+            <div>
+              <button className="large-btn uppercase ff-serif fs-600 text-dark bg-white">
+                Explore
+              </button>
+            </div>
+          </div>
         </section>
       )}
       <Outlet />
