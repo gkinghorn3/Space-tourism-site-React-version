@@ -12,7 +12,7 @@
   --clr-white: 0 0% 100%;
 
   /* font sizes */
-  --fs-900: 9.375rem;
+  --fs-900: clamp(6rem, 4.6514rem + 5.5328vw, 9.375rem);;
   --fs-800: 6.25rem;
   --fs-700: 3.5rem;
   --fs-600: 2rem;
@@ -31,8 +31,6 @@
   min-height: 100%;
  
 
-    background-image: url(/backgrounds/background-home-mobile.jpg);
-    background-size: cover;
   
   
   

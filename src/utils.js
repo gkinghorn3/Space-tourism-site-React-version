@@ -7,5 +7,10 @@ export const selectBg = (screenWidth, tabSelected) => {
     } else if (screenWidth >= 768 && screenWidth < 997) {
       const bgImage = `background-${tabSelected}-tablet.jpg`;
       return bgImage;
-    }
+    } else if (screenWidth < 768) {
+        const bgImage = `background-${tabSelected}-mobile.jpg`;
+        return bgImage;
+      } else {
+        return
+      }
   }

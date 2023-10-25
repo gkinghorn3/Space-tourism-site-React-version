@@ -44,10 +44,10 @@ const Navigation = ({ tabSelector }) => {
           <Link to="/destinations">
             <li
               aria-selected={checkedIndex === 1}
-              onClick={() => handleItemClick(1, "destinations")}
+              onClick={() => handleItemClick(1, "destination")}
               className="numbered-title"
             >
-              <span>01</span>Destinations
+              <span>01</span>Destination
             </li>
           </Link>
 
@@ -69,7 +69,11 @@ const Navigation = ({ tabSelector }) => {
       </nav>
       {homeVisible && (
         <section className="home-content-container">
-          <h1>HOME</h1>
+           <div className='home-heading-txt'> 
+           <h1>So you want to go to</h1>
+           <span className='fs-900 uppercase ff-serif'>Space</span>
+           </div>
+          
         </section>
       )}
       <Outlet />

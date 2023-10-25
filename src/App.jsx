@@ -17,14 +17,14 @@ function App() {
     // set initial tab
     setTabSelected("home");
     setScreenWidth(window.innerWidth);
-    // selectBg();
+    
   }, [])
 
 
   
 
   
-console.log(screenWidth);
+
   return (
       <div id='bg-img-container' style={{ backgroundImage: `url(/backgrounds/${selectBg(screenWidth, tabSelected)})` }}>
         <Routes>
