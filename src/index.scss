@@ -5,7 +5,7 @@
 /*--------------------*/
 
 :root {
-
+  
   /* colours */
   --clr-dark: 230 35% 7%;
   --clr-light: 231 77% 90%;
@@ -80,7 +80,9 @@ p {
     font-weight: 400;
 }
 
-/* set body */
+/* set body and root */
+
+
 
 body {
     font-family: var(--ff-sans-normal);
@@ -89,21 +91,14 @@ body {
     background-color: hsl( var(--clr-dark) );
     line-height : 1.5;
     min-height: 100vh; 
-    padding: 1rem 0;
-    background-image: url(/backgrounds/background-home-mobile.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
 
+    overflow: hidden;
 
-    @media (min-width: 768px) {
-      background-image: url(/backgrounds/background-home-tablet.jpg);
-    }
-    
-    @media (min-width: 994px) {
-      background-image: url(/backgrounds/background-home-desktop.jpg);
-    }
 }
 
+#root{
+  height: 100vh;
+}
 
 
 /* set image defaults*/ 
@@ -143,6 +138,17 @@ select {
 a {
   text-decoration: none;
 }
+
+// set background image here to allow inline styles to change it on the Apps first child component depending on the tab selected
+// .background-img-container {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+ 
+  
+  
+// }
+
 
   /* ------------------- */
 /* Utility classes     */

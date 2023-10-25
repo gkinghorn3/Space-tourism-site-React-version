@@ -1,35 +1,53 @@
+#app-background {
+    height: 100%;
+    background-image: url(/backgrounds/background-home-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    @media (min-width: 768px) {
+      background-image: url(/backgrounds/background-home-tablet.jpg);
+    }
+    
+    @media (min-width: 994px) {
+      background-image: url(/backgrounds/background-home-desktop.jpg);
+    }
+}
+
+
 .nav-container {
-    background-color: transparent;
-    width: 100vw;
-    height: fit-content;
-    justify-content: space-between;
-    margin-top: 1rem;
-    padding-left: 2rem;
-    
-    
+  background-color: transparent;
+  width: 100vw;
+  height: fit-content;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-top: 2rem;
 
-    .heading-left {
-        flex-basis: 35%;
+  .heading-left {
+    flex-basis: 35%;
 
-        img {
-            margin-top: 2.4rem;
-        }
+    img {
+      margin-top: 2.4rem;
+    }
+  }
+
+  .nav-links {
+    flex-basis: 65%;
+    justify-content: end;
+    padding-right: clamp(2rem, -10.8428rem + 26.7559vw, 12rem);
+    background-color: hsl(var(--clr-white) / 0.04);
+    backdrop-filter: blur(20.774227142333984px);
+
+    @media (max-width: 768px) {
+      display: none;
     }
 
-    .nav-links {
-        flex-basis: 65%;
-        justify-content: end;
-       
-        padding-right: clamp(2rem, -10.8428rem + 26.7559vw, 12rem);
-        background-color: hsl( var(--clr-white) / 0.04); 
-        backdrop-filter: blur(20.774227142333984px);
+    li {
+      height: 100%;
+      padding: clamp(1rem, -0.2843rem + 2.6756vw, 2rem);
+      font-size: clamp(1rem, 0.0368rem + 2.0067vw, 1.75rem);
 
-        li {
-            height: 100%;
-            padding: 2rem 0;
-        }
-        
-        
+ 
     }
-    
+  }
 }
