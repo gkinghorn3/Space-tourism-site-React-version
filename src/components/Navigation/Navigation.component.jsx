@@ -70,7 +70,7 @@ const Navigation = ({ tabSelector }) => {
       {homeVisible && (
         <section className="home-content-container">
            <div className='home-heading-txt'> 
-           <h1>So you want to go to</h1>
+           <h1 className="uppercase -fs-400">So you want to travel to</h1>
            <span className='fs-900 uppercase ff-serif'>Space</span>
            </div>
           
