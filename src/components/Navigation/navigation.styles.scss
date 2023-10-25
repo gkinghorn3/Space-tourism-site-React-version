@@ -1,18 +1,20 @@
-#app-background {
-    height: 100%;
-    background-image: url(/backgrounds/background-home-mobile.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+// #home-background {
+//   display: flex;
+//   flex-direction: column;
+//     height: 100%;
+//     background-image: url(/backgrounds/background-home-mobile.jpg);
+//     background-size: cover;
+//     background-repeat: no-repeat;
 
 
-    @media (min-width: 768px) {
-      background-image: url(/backgrounds/background-home-tablet.jpg);
-    }
+//     @media (min-width: 768px) {
+//       background-image: url(/backgrounds/background-home-tablet.jpg);
+//     }
     
-    @media (min-width: 994px) {
-      background-image: url(/backgrounds/background-home-desktop.jpg);
-    }
-}
+//     @media (min-width: 994px) {
+//       background-image: url(/backgrounds/background-home-desktop.jpg);
+//     }
+// }
 
 
 .nav-container {
@@ -37,17 +39,29 @@
     padding-right: clamp(2rem, -10.8428rem + 26.7559vw, 12rem);
     background-color: hsl(var(--clr-white) / 0.04);
     backdrop-filter: blur(20.774227142333984px);
-
+    gap: 1rem;
     @media (max-width: 768px) {
       display: none;
+    }
+
+    a {
+      padding: 0;
     }
 
     li {
       height: 100%;
       padding: clamp(1rem, -0.2843rem + 2.6756vw, 2rem);
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
       font-size: clamp(1rem, 0.0368rem + 2.0067vw, 1.75rem);
 
  
     }
   }
 }
+
+
+
+/**************************/
+/* home 'content' section */
+/**************************/
