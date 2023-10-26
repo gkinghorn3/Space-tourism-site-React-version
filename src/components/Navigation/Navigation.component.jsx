@@ -68,8 +68,11 @@ const Navigation = ({ tabSelector }) => {
       </nav>
       {homeVisible && (
         <section className="home-content-container">
+
           <div className=" flex home-heading-content ">
-            <div>
+
+            <div className='flex home-content-inner'>
+            <div className='inner-text'>
               <h1 className="uppercase ">So you want to travel to</h1>
               <span className="fs-900 uppercase ff-serif">Space</span>
               <p>
@@ -80,11 +83,16 @@ const Navigation = ({ tabSelector }) => {
               </p>
             </div>
 
-            <div>
+            <div className="inner-btn">
               <button className="large-btn uppercase ff-serif fs-600 text-dark bg-white">
                 Explore
               </button>
             </div>
+            </div>
+            
+
+
+
           </div>
         </section>
       )}

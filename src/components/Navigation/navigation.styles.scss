@@ -69,26 +69,49 @@
 /**************************/
 
 .home-content-container {
-
+  margin-top: 8rem;
 
   .home-heading-content {
     max-width: 500px;
     margin-top: 3rem;
     margin-left: auto;
     margin-right: auto;
-    flex-direction: column;
-    align-items: center;
-
+ 
     @media (min-width: 996px) {
       flex-direction: row;
-    }
-
-    &>div {
-      margin: 0 1rem;
+      margin:0;
+      margin-left: clamp(8rem, -17.6905rem + 41.2698vw, 21rem);
     }
 
     @media (max-width: 780px) {
       margin-top: 8rem;
+    }
+
+    .home-content-inner{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left:auto;
+      margin-right: auto;
+
+      @media (min-width: 996px) {
+        flex-direction: row;
+      }
+
+      @media (max-width: 500px) {
+        padding: 0 2rem;
+      }
+
+
+     .inner-text {
+      
+     }
+      
+      button {
+        @media (min-width: 996px) {
+          margin-left: 4rem;
+        }
+      }
     }
   
     h1 {
