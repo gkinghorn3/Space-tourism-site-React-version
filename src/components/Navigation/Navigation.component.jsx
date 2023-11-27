@@ -1,31 +1,26 @@
 import { useState, useEffect } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation, NavLink } from "react-router-dom";
 
 import "./navigation.styles.scss";
 
 import logo from "../../assets/logo.svg";
 
-const Navigation = ({ tabSelector, tabSelected, location }) => {
+const Navigation = ({ tabSelector, tabSelected }) => {
   // persist aria select
   const [checkedIndex, setCheckedIndex] = useState(0);
-
-
+  
+  const location = useLocation();
+  const currentPath = location.pathname.substring(1);
 
   const handleItemClick = (index, tab) => {
     setCheckedIndex(index);
     tabSelector(tab);
   };
 
-  useEffect(() => {
-    if (location.pathname.substring(1) === "home") {
-      setCheckedIndex(0);
-    } else if (location.pathname.substring(1) === "destination") {
-      setCheckedIndex(1);
-    }
-    
-  }, [location.pathname]);
+  
 
-console.log(location.pathname.substring(1)) 
+
+
   return (
     <div id="nav-container">
       <nav className="nav-container flex">
@@ -33,25 +28,25 @@ console.log(location.pathname.substring(1))
           <img className="logo-icon" src={logo} alt="Logo"></img>
         </div>
         <ul className="nav-links flex underline-indicators">
-          <Link to="/">
+        <NavLink to="/" exact className="is-underlined" > 
             <li
-              aria-selected={checkedIndex === 0}
+              aria-selected={checkedIndex === 0 || currentPath === "home"}
               onClick={() => handleItemClick(0, "home")}
               className="numbered-title"
             >
               <span>00</span>home
             </li>
-          </Link>
+          </NavLink>
 
-          <Link to="/destinations" className="is-underlined">
+          <NavLink to="/destinations" exact className="is-underlined" > 
             <li
-              aria-selected={checkedIndex === 1}
-              onClick={() => handleItemClick(1, "destination")}
+              aria-selected={checkedIndex === 0 || currentPath === "destinations"}
+              onClick={() => handleItemClick(1, "destinations")}
               className="numbered-title"
             >
               <span>01</span>Destination
             </li>
-          </Link>
+          </NavLink>
 
           <li
             aria-selected={checkedIndex === 2}
