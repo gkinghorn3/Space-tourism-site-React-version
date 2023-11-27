@@ -5,12 +5,11 @@ import "./navigation.styles.scss";
 
 import logo from "../../assets/logo.svg";
 
-const Navigation = ({ tabSelector, tabSelected }) => {
+const Navigation = ({ tabSelector, tabSelected, location }) => {
   // persist aria select
   const [checkedIndex, setCheckedIndex] = useState(0);
 
-  // render or hide home content
-  const [homeVisible, setHomeVisible] = useState(true);
+
 
   const handleItemClick = (index, tab) => {
     setCheckedIndex(index);
@@ -18,14 +17,15 @@ const Navigation = ({ tabSelector, tabSelected }) => {
   };
 
   useEffect(() => {
-    if (tabSelected === "home") {
-      setHomeVisible(true);
-    } else {
-      setHomeVisible(false);
+    if (location.pathname.substring(1) === "home") {
+      setCheckedIndex(0);
+    } else if (location.pathname.substring(1) === "destination") {
+      setCheckedIndex(1);
     }
+    
+  }, [location.pathname]);
 
-  }, [tabSelected]);
-
+console.log(location.pathname.substring(1)) 
   return (
     <div id="nav-container">
       <nav className="nav-container flex">
@@ -43,7 +43,7 @@ const Navigation = ({ tabSelector, tabSelected }) => {
             </li>
           </Link>
 
-          <Link to="/destinations">
+          <Link to="/destinations" className="is-underlined">
             <li
               aria-selected={checkedIndex === 1}
               onClick={() => handleItemClick(1, "destination")}
@@ -69,7 +69,7 @@ const Navigation = ({ tabSelector, tabSelected }) => {
           </li>
         </ul>
       </nav>
-      {homeVisible && (
+      {tabSelected === 'home' ? (
         <section className="home-content-container">
           <div className="flex home-content-inner">
             <div className="flex inner-text">
@@ -90,7 +90,7 @@ const Navigation = ({ tabSelector, tabSelected }) => {
            
           </div>
         </section>
-      )}
+      ) : null}
       <Outlet />
     </div>
   );

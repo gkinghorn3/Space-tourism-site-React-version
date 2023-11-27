@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     setScreenWidth(window.innerWidth);
     
-  }, [tabSelected])
+  }, [])
 
   useEffect(() => {
     let currentPath = location.pathname.substring(1); // remove the leading '/'
@@ -46,7 +46,7 @@ function App() {
 
   const [open, setOpen] = useState(false);
 
- console.log(tabSelected)
+
   return (
       <div id='bg-img-container' style={{ backgroundImage: `url(/backgrounds/${selectBg(screenWidth, tabSelected)})` }}>
         <div className='side-drawer'>
@@ -55,7 +55,7 @@ function App() {
       </div>  
  
         <Routes>
-        <Route path="/" element={<Navigation tabSelector={setTabSelected} tabSelected={tabSelected} />}>
+        <Route path="/" element={<Navigation tabSelector={setTabSelected} tabSelected={tabSelected} location={location} />}>
           
             <Route path="/destinations" element={<Destinations/>} />
           
