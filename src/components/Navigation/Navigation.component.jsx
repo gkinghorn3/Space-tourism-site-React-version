@@ -28,9 +28,9 @@ const Navigation = ({ tabSelector, tabSelected }) => {
           <img className="logo-icon" src={logo} alt="Logo"></img>
         </div>
         <ul className="nav-links flex underline-indicators">
-        <NavLink to="/" exact className="is-underlined" > 
+        <NavLink to="/" > 
             <li
-              aria-selected={checkedIndex === 0 || currentPath === "home"}
+              aria-selected={checkedIndex === 0 || currentPath === ''}
               onClick={() => handleItemClick(0, "home")}
               className="numbered-title"
             >
@@ -38,9 +38,9 @@ const Navigation = ({ tabSelector, tabSelected }) => {
             </li>
           </NavLink>
 
-          <NavLink to="/destinations" exact className="is-underlined" > 
+          <NavLink to="/destinations" > 
             <li
-              aria-selected={checkedIndex === 0 || currentPath === "destinations"}
+              aria-selected={checkedIndex === 1 || currentPath === 'destinations'}
               onClick={() => handleItemClick(1, "destinations")}
               className="numbered-title"
             >
