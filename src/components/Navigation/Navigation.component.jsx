@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import "./navigation.styles.scss";
 
 import logo from "../../assets/logo.svg";
 
-const Navigation = ({ tabSelector }) => {
+const Navigation = ({ tabSelector, tabSelected }) => {
   // persist aria select
   const [checkedIndex, setCheckedIndex] = useState(0);
 
@@ -15,13 +15,16 @@ const Navigation = ({ tabSelector }) => {
   const handleItemClick = (index, tab) => {
     setCheckedIndex(index);
     tabSelector(tab);
+  };
 
-    if (tab === "home") {
+  useEffect(() => {
+    if (tabSelected === "home") {
       setHomeVisible(true);
     } else {
       setHomeVisible(false);
     }
-  };
+
+  }, [tabSelected]);
 
   return (
     <div id="nav-container">
