@@ -6,7 +6,7 @@ import "./navigation.styles.scss";
 import logo from "../../assets/logo.svg";
 
 const Navigation = ({ tabSelector, tabSelected }) => {
-  // persist aria select
+ 
   const [checkedIndex, setCheckedIndex] = useState(0);
   
   const location = useLocation();
